@@ -14,34 +14,38 @@ const API_LINK = `https://api.openweathermap.org/data/2.5/weather?q=`;
 const getApiData = () => {
   const city = input.value || "Vlissingen";
   const API = API_LINK + city + API_KEY + API_UNITS;
-  axios.get(API).then((response) => {
-    const data = response.data;
-    cityName.textContent = data.name;
-    const temp = data.main.temp;
-    temperature.textContent = temp.toFixed(0) + "°C";
-    const clouds = data.weather[0].main;
-    weather.textContent = clouds;
-    const humid = data.main.humidity + "%";
-    humidity.textContent = humid;
-    const winds = data.wind.speed.toFixed(0) + "km/h";
-    wind.textContent = winds;
+  axios
+    .get(API)
+    .then((response) => {
+      const data = response.data;
+      cityName.textContent = data.name;
+      const temp = data.main.temp;
+      temperature.textContent = temp.toFixed(0) + "°C";
+      const clouds = data.weather[0].main;
+      weather.textContent = clouds;
+      const humid = data.main.humidity + "%";
+      humidity.textContent = humid;
+      const winds = data.wind.speed.toFixed(0) + "km/h";
+      wind.textContent = winds;
 
-    const weatherImages = {
-      Thunderstorm: "./img/thunderstorm.png",
-      Drizzle: "./img/drizzle.png",
-      Rain: "./img/rain.png",
-      Snow: "./img/ice.png",
-      Mist: "./img/fog.png",
-      Clear: "./img/sun.png",
-      Clouds: "./img/cloud.png",
-    };
+      const weatherImages = {
+        Thunderstorm: "./img/thunderstorm.png",
+        Drizzle: "./img/drizzle.png",
+        Rain: "./img/rain.png",
+        Snow: "./img/ice.png",
+        Mist: "./img/fog.png",
+        Clear: "./img/sun.png",
+        Clouds: "./img/cloud.png",
+      };
 
-    const imagePath = weatherImages[clouds] || "./img/unknown.png";
-    photo.setAttribute("src", imagePath);
-  });
+      const imagePath = weatherImages[clouds] || "./img/unknown.png";
+      photo.setAttribute("src", imagePath);
+    })
+    .catch(() => (warning.textContent = "Enter the correct city name"));
 };
 
 button.addEventListener("click", () => {
   getApiData();
   input.value = "";
+  warning.textContent = "";
 });
