@@ -37,6 +37,7 @@ h1 {
   .main-input {
     display: flex;
     flex-direction: column;
+    gap: 20px;
   }
 }
 
