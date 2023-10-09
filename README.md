@@ -6,7 +6,7 @@
 
 <img width=400px src=""/>
 <h3>Desktop Version</h3> 
-<img src=""/>
+<img src="https://github.com/PawelOwiesek/WeatherApp/blob/main/img/share.png"/>
 
 <h3>Mobile Version</h3> 
 <img src="public\images\mobile version.png"/>
