@@ -57,7 +57,7 @@ input::placeholder {
 
 button {
   padding: 10px;
-  margin-left: 20px;
+  margin: 0 0 0 20px;
   color: #fff;
   font-weight: bold;
   background: none;
@@ -69,8 +69,8 @@ button {
 
 @media (max-width: 550px) {
   button {
-    justify-self: center;
-    margin-top: 20px;
+    margin: 20px 0;
+    background-color: #795f46;
   }
 }
 
