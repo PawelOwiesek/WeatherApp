@@ -40,4 +40,8 @@ const getApiData = () => {
     photo.setAttribute("src", imagePath);
   });
 };
-getApiData();
+
+button.addEventListener("click", () => {
+  getApiData();
+  input.value = "";
+});
