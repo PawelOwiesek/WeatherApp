@@ -1,0 +1,3 @@
+# WeatherApp
+
+This application is a weather app developed using HTML, CSS, JavaScript, and the Axios library. It allows users to enter a city name in an input field and click a button to fetch weather data from the OpenWeatherMap API. The data retrieved includes the city name, temperature in Celsius, weather condition, humidity percentage, and wind speed in kilometers per hour. The application also displays an appropriate weather image based on the current weather condition. Users can either click the button or press Enter after entering the city name to get weather information. If an invalid city name is entered, a warning message is displayed.
