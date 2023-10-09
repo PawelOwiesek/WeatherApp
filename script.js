@@ -25,6 +25,19 @@ const getApiData = () => {
     humidity.textContent = humid;
     const winds = data.wind.speed.toFixed(0) + "km/h";
     wind.textContent = winds;
+
+    const weatherImages = {
+      Thunderstorm: "./img/thunderstorm.png",
+      Drizzle: "./img/drizzle.png",
+      Rain: "./img/rain.png",
+      Snow: "./img/ice.png",
+      Mist: "./img/fog.png",
+      Clear: "./img/sun.png",
+      Clouds: "./img/cloud.png",
+    };
+
+    const imagePath = weatherImages[clouds] || "./img/unknown.png";
+    photo.setAttribute("src", imagePath);
   });
 };
 getApiData();
